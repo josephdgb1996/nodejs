@@ -15,6 +15,8 @@ const emojis = {
   9: "😏",
 }
 
+app.use(express.static(__dirname + "/views"));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
