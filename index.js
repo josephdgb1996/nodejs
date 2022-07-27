@@ -15,12 +15,12 @@ const emojis = {
   9: "😏",
 }
 
-app.use(express.static(__dirname + "/views"));
+app.use(express.static(__dirname + "/public"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.set('views', './views');
+app.set('views', './public');
 
 app.get('/', (req, res) => {
   const portText = port.toString();
