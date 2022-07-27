@@ -26,8 +26,7 @@ app.get('/', (req, res) => {
   const emojiPosition = parseInt(portChar);
   const emojiFigure = emojis[emojiPosition];
   
-  console.log(process.env.ENV_VAR);
-  res.render('index.pug', { message: `Escuchando en el puerto ${port} ${emojiFigure}`});
+  res.render('index.pug', { message: `Escuchando en el puerto ${process.env.ENV_VAR} ${port} ${emojiFigure}`});
 })
 
 app.listen(port, () => {
