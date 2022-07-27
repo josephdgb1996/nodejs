@@ -5,13 +5,14 @@ const port = process.env.PORT || 3000;
 const emojis = {
   0: "🤠",
   1: "🤪",
-  2: "👻",
+  2: "😵‍💫",
+  3: "🙃",
   4: "😎",
   5: "😏",
-  6: "🤯",
+  6: "👺",
   7: "🫠",
   8: "🥸",
-  9: "👺",
+  9: "😏",
 }
 
 app.use(express.urlencoded({ extended: false }));
