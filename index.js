@@ -2,6 +2,12 @@ const express = require('express')
 const app = express();
 const port = process.env.PORT || 3000;
 
+// mongodb
+const { MongoClient } = require('mongodb');
+const url = `mongodb://172.31.90.240:27017`;
+const client = new MongoClient(url);
+
+
 const emojis = {
   0: "🤠",
   1: "🤪",
@@ -28,8 +34,17 @@ app.get('/', (req, res) => {
 
   const emojiPosition = parseInt(portChar);
   const emojiFigure = emojis[emojiPosition];
-  
-  res.render('index.pug', { message: `Escuchando en el puerto ${port} ${emojiFigure}`});
+
+  res.render('index.pug', { message: `Escuchando en el puerto ${port} ${emojiFigure}` });
+})
+
+app.get('/database', async (req, res) => {
+  try {
+    await client.connect();
+    return res.status(200).send("Conectado a la base de datos");
+  } catch (error) {
+    return res.status(200).send(error);
+  }
 })
 
 app.listen(port, () => {
