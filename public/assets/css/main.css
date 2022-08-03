@@ -27,6 +27,16 @@ html {
     font-weight: 700;
 }
 
+.nginx .connected {
+    animation: fadeIn ease 3s;
+    color: green;
+}
+
+.nginx .disconnected {
+    animation: fadeIn ease 3s;
+    color: red;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
